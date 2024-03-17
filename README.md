@@ -61,3 +61,157 @@ class Main{
     }
 }
 
+linked list
+
+import java.util.*;
+import java.io.*;
+class Node 
+{
+    int data;
+    Node next;
+    Node(int data)
+    {
+        this.data=data;
+        this.next=null;
+    }
+}
+class GFG {
+    static Node head=null;
+    static void insert_at_begin(int data)
+    {
+        Node new_node=new Node(data);
+        if(head==null)
+        {
+            head=new_node;
+            return;
+        }
+        new_node.next=head;
+        head=new_node;
+    }
+    static void printlist()
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public static void main (String[] args) {
+            Scanner s=new Scanner(System.in);
+            int n=s.nextInt();
+            for(int i=0; i<n; i++)
+                insert_at_begin(s.nextInt());
+            printlist();
+    }
+}
+
+mycode
+import java.util.*;
+import java.io.*;
+
+
+class Node{
+    int data;
+    Node next;
+    
+    Node(int d){
+        data=d;
+        next= null;
+    }
+}
+class Main{
+    static Node head=null;
+    static void insertbegin(int n){
+        Node new_node=new Node(n);
+        if (head==null){
+            head=new_node;
+            return;
+        }
+        new_node.next=head;
+        head=new_node;
+        
+    }
+    
+    static void printls(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public static void main (String[] args) {
+            Scanner s=new Scanner(System.in);
+            int n=s.nextInt();
+            for(int i=0; i<n; i++)
+                insertbegin(s.nextInt());
+            printls();
+    }
+}
+
+import java.util.*;
+import java.io.*;
+
+
+class Node{
+    int data;
+    Node next;
+    
+    Node(int d){
+        data=d;
+        next= null;
+    }
+}
+class Main{
+    static Node head=null;
+    static Node temp=null;
+    static void insertlast(int n){
+        Node new_node= new Node(n);
+        
+        if(head==null){
+            head=new_node;
+            temp=head;
+            return; //purpose??
+        }
+        
+        
+        if (temp.next==null){
+            temp.next=new_node;
+            temp=new_node;
+        }
+    }
+    static void insertbetween(Node prev,int n){
+        Node new_node= new Node(n);
+        if(prev==null){
+            System.out.println("prev node cannt be null");
+        }
+        
+        else{
+            new_node.next=prev.next;
+            prev.next=new_node;
+        }
+    }
+    
+    static void printls(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public static void main (String[] args) {
+            Scanner s=new Scanner(System.in);
+            int n=s.nextInt();
+            for(int i=0; i<n; i++){
+                int a=s.nextInt();
+                insertlast(a);
+            }
+            
+            int j=s.nextInt();
+            
+            Node(j);
+            int k=s.nextInt();
+            insertbetween(mynode,k);
+            printls();
+    }
+}
